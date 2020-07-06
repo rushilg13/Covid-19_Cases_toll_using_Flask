@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <title>Toll</title>
+    </head>
+    <style>*{box-sizing: border-box; margin: 0; padding: 0;}</style>
+    <body style="background-color: palegreen;">
+        <header class="jumbotron" style="text-align: center; background-color: chartreuse; border: black solid;"><b>Covid-19 Toll</b></header>
+
+        <br>
+        <div>
+            <div class="box offset-5" style="border: black solid; height: 150px; width: 300px; padding: 20px;">
+                <div style="text-align: center;">
+                <span><b>GLOBAL STATS</b></span><br>
+                <span>Total Cases : {{world.TotalConfirmed}}</span><br>
+                <span>Total Deaths : {{world.TotalDeaths}}</span><br>
+                <span>Total Recovered : {{world.TotalRecovered}}</span>
+                </div>
+            </div>
+            <br>
+            {% for data in dataset %}
+            <div class="box offset-5" style="border: black solid; height: 150px; width: 300px; padding: 20px;">
+                <div style="text-align: center;">
+                <span><b>COUNTRY STATS</b></span><br>
+                <span>Name : {{data.Country}}</span><br>
+                <span>Total Cases : {{data.TotalConfirmed}}</span><br>
+                <span>Total Deaths : {{data.TotalDeaths}}</span><br>
+                <span>Total Recovered : {{data.TotalRecovered}}</span>
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </body>
+</html>
